@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Kaushan Script";
+  font-size: 10px;
+}
+
+.team {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #ccc;
+  position: relative;
+}
+
+.team img.front {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 36%;
+  z-index: 1;
+  -webkit-animation: color 4s linear infinite;
+  animation: front 4s linear infinite;
+  filter: grayscale(20%) sepia(0%);
+}
+
+.team img.middle {
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  height: 110%;
+  opacity: 0.5;
+  -webkit-animation: gray 4s linear infinite;
+  animation: middle 4s linear infinite both;
+  filter: hue-rotate(45deg);
+}
+
+.team .member {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-animation: text 4s linear infinite;
+  animation: text 4s linear infinite;
+}
+
+.team .quote {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  text-align: left;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-animation: text 4s linear infinite;
+  animation: text 4s linear infinite;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+@media (orientation: landscape) and (max-width: 1023px) {
+  .team .member {
+    width: 60%;
+    right: 0;
+    left: auto;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    width: 40vw;
+  }
+
+  .team img.middle {
+    height: 115%;
+  }
+}
+
+@media (orientation: portrait) {
+  .team .member {
+    left: 40%;
+    width: 50vw;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+    /* width: 40vw; */
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    width: 40vw;
+  }
+
+  .team img:nth-child(2) {
+    height: 100vh;
+    left: -100%;
+  }
+
+  .team img.front {
+    right: -1vw;
+  }
+
+  .quote {
+    top: 40%;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1024px) {
+  .team .member {
+    left: 40%;
+    width: 50vw;
+  }
+
+  .team h1 {
+    font-size: 5rem;
+  }
+
+  .team h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+    width: 40vw;
+  }
+
+  .team img:nth-child(2) {
+    width: 110vw;
+    left: -2vw;
+  }
+}
+
+@keyframes front {
+  0% {
+    transform: translate(0) scale(1);
+    opacity: 0;
+    filter: grayscale(20%) sepia(0%);
+  }
+
+  8% {
+    opacity: 0;
+  }
+
+  13% {
+    opacity: 1;
+  }
+
+  87% {
+    opacity: 1;
+  }
+
+  92% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-50%, -10%) scale(1.3);
+    opacity: 0;
+    filter: grayscale(20%) sepia(80%);
+  }
+}
+
+@keyframes middle {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 0.5;
+  }
+
+  13% {
+    opacity: 0.5;
+  }
+
+  87% {
+    opacity: 0.5;
+  }
+
+  92% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(5%) scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes text {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 0;
+  }
+
+  13% {
+    opacity: 1;
+  }
+
+  87% {
+    opacity: 1;
+  }
+
+  92% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
